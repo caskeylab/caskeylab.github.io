@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratory for Acoustic Therapy and Imaging | Charles Caskey, PhD</title>
+  <meta name="description" content="The Laboratory for Acoustic Therapy and Imaging develops noninvasive, image-guided ultrasound technologies for acoustic therapy, neuromodulation, and quantitative imaging." />
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --ink: #17202a;
+      --muted: #5d6875;
+      --line: #dce3ea;
+      --accent: #245c73;
+      --accent-2: #8aaec0;
+      --accent-3: #eef6f8;
+      --max: 1120px;
+      --radius: 22px;
+      --shadow: 0 18px 50px rgba(23, 32, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top left, #e8f4f7 0, transparent 34rem), var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(247, 248, 251, 0.82);
+      border-bottom: 1px solid rgba(220, 227, 234, 0.85);
+    }
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      font-size: 0.98rem;
+      color: var(--ink);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+
+    main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4rem; }
+    section { scroll-margin-top: 5.5rem; }
+
+    .hero {
+      padding: 6rem 0 3.25rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin: 0 0 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.7rem, 6vw, 5.25rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+    .hero-text {
+      margin: 1.35rem 0 0;
+      max-width: 760px;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--muted);
+    }
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0.78rem 1.08rem;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 8px 24px rgba(23, 32, 42, 0.06);
+    }
+    .button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .button:hover { text-decoration: none; transform: translateY(-1px); }
+
+    .hero-card {
+      background: linear-gradient(160deg, #ffffff, #edf7fa);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      min-height: 340px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 2rem -4rem auto auto;
+      width: 15rem;
+      height: 15rem;
+      border: 1px solid rgba(36, 92, 115, 0.20);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2rem rgba(36, 92, 115, 0.05), 0 0 0 4rem rgba(36, 92, 115, 0.035), 0 0 0 6rem rgba(36, 92, 115, 0.025);
+    }
+    .hero-card h2 { margin: 0 0 0.75rem; font-size: 1.35rem; letter-spacing: -0.03em; }
+    .hero-card p { position: relative; color: var(--muted); margin: 0.75rem 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; position: relative; }
+    .tag { background: rgba(255,255,255,0.75); border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 0.7rem; color: var(--accent); font-size: 0.84rem; font-weight: 700; }
+
+    .section-heading { margin: 3.8rem 0 1.2rem; }
+    .section-heading h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1; letter-spacing: -0.055em; margin: 0; }
+    .section-heading p { color: var(--muted); font-size: 1.06rem; max-width: 780px; margin: 0.85rem 0 0; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: 0 12px 30px rgba(23, 32, 42, 0.045);
+    }
+    .card h3 { margin: 0 0 0.55rem; font-size: 1.14rem; letter-spacing: -0.03em; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      padding: clamp(1.25rem, 3vw, 2rem);
+      box-shadow: var(--shadow);
+    }
+    .thrust { display: grid; grid-template-columns: 0.6fr 1.4fr; gap: 1.25rem; padding: 1.4rem 0; border-top: 1px solid var(--line); }
+    .thrust:first-child { border-top: 0; padding-top: 0; }
+    .thrust:last-child { padding-bottom: 0; }
+    .thrust h3 { margin: 0; font-size: 1.25rem; letter-spacing: -0.035em; }
+    .thrust p { margin: 0 0 0.8rem; color: var(--muted); }
+    .thrust ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .thrust li { margin: 0.45rem 0; }
+
+    .split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1rem; align-items: stretch; }
+    .person {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--accent), var(--accent-2));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      flex: 0 0 auto;
+    }
+    .person h3 { margin: 0; font-size: 1.25rem; }
+    .person p { margin: 0.2rem 0 0; color: var(--muted); }
+
+    .publication-list { display: grid; gap: 0.8rem; }
+    .publication {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--accent-3);
+    }
+    .publication strong { display: block; }
+    .publication span { color: var(--muted); display: block; margin-top: 0.2rem; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 2rem 1.25rem;
+      margin-top: 2rem;
+    }
+    .footer-inner { max-width: var(--max); margin: 0 auto; font-size: 0.92rem; }
+
+    @media (max-width: 860px) {
+      .hero, .split, .thrust { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .hero { padding-top: 3.5rem; }
+      .nav-links { gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home">Laboratory for Acoustic Therapy and Imaging</a>
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#people">People</a>
+        <a href="#join">Join</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Focused ultrasound • Imaging • Neuromodulation</p>
+        <h1 id="hero-title">Noninvasive ultrasound technologies for therapy and brain modulation.</h1>
+        <p class="hero-text">The Laboratory for Acoustic Therapy and Imaging develops image-guided ultrasound technologies for precise control, measurement, and understanding of biological systems.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#research">Explore research</a>
+          <a class="button" href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">Google Scholar</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Lab summary">
+        <h2>Acoustics, imaging, and biology</h2>
+        <p>Focused ultrasound can interact with tissue deep in the body without surgery while maintaining millimeter-scale spatial precision.</p>
+        <p>Our lab combines experimental physics, biomedical imaging, neurobiology, and translational validation to make acoustic therapies controllable, interpretable, and safe.</p>
+        <div class="tag-row">
+          <span class="tag">MR-guided FUS</span>
+          <span class="tag">MR-ARFI</span>
+          <span class="tag">Brain networks</span>
+          <span class="tag">Safety</span>
+          <span class="tag">Validation</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <div class="section-heading">
+        <h2 id="research-title">Research</h2>
+        <p>Our research addresses a central challenge in therapeutic ultrasound: how to precisely deliver, measure, and interpret acoustic interactions with living tissue, especially in the brain.</p>
+      </div>
+
+      <div class="grid" aria-label="Research themes">
+        <article class="card">
+          <h3>Focused Ultrasound Neuromodulation</h3>
+          <p>Noninvasive modulation of neural circuits with millimeter precision, informed by imaging, pulse design, and mechanism.</p>
+        </article>
+        <article class="card">
+          <h3>Acoustic Therapy & Safety</h3>
+          <p>Quantitative frameworks for exposure control, validation, and translational feasibility.</p>
+        </article>
+        <article class="card">
+          <h3>Imaging & Measurement</h3>
+          <p>MR-based and optical techniques to localize, quantify, and interpret ultrasound–tissue interactions.</p>
+        </article>
+      </div>
+
+      <div class="section-heading">
+        <h2>Program areas</h2>
+      </div>
+      <div class="panel">
+        <article class="thrust">
+          <h3>1. Focused ultrasound neuromodulation</h3>
+          <div>
+            <p>Focused ultrasound can excite, inhibit, or modulate neural activity without implants or incisions. We study neuromodulation across scales, from cellular responses to distributed brain networks.</p>
+            <ul>
+              <li>Circuit-level neuromodulation in nonhuman primates using MRI guidance and simultaneous fMRI.</li>
+              <li>Pulse repetition frequency and temporal structure as determinants of neuronal response.</li>
+              <li>Mechanistic studies linking acoustic parameters to cellular and network-level outcomes.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="thrust">
+          <h3>2. Image-guided acoustic therapy and safety</h3>
+          <div>
+            <p>Precise therapy requires knowing where ultrasound energy is delivered and what it does to tissue. We develop imaging-based methods to localize acoustic fields and assess exposure.</p>
+            <ul>
+              <li>MR Acoustic Radiation Force Imaging for nonthermal localization of focused ultrasound beams.</li>
+              <li>Integration of MRI, optical tracking, and simulation for targeting and validation.</li>
+              <li>Quantitative assessment of heating, displacement, and cavitation risk.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="thrust">
+          <h3>3. Imaging, measurement, and ground-truth validation</h3>
+          <div>
+            <p>Ultrasound–tissue interactions are physical processes that must be quantified before biological interpretation. We treat measurement as a first-class scientific objective.</p>
+            <ul>
+              <li>Cross-validation using MR thermometry, displacement imaging, acoustic simulation, and biological readouts.</li>
+              <li>Experimental paradigms designed to avoid measurement artifacts and confounds.</li>
+              <li>Linking pressure, displacement, and timing to biological responses observed optically or with fMRI.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-title">
+      <div class="section-heading">
+        <h2 id="publications-title">Publications</h2>
+        <p>Representative publications will be highlighted here with brief impact summaries. A complete and current publication list is available through Google Scholar.</p>
+      </div>
+      <div class="panel publication-list">
+        <div class="publication">
+          <strong>Focused ultrasound neuromodulation in nonhuman primates</strong>
+          <span>Program-defining work using image guidance and functional imaging to evaluate circuit-level responses.</span>
+        </div>
+        <div class="publication">
+          <strong>Pulse-parameter mechanisms in ultrasound neuromodulation</strong>
+          <span>Studies identifying how stimulation timing and pulse structure influence neuronal response.</span>
+        </div>
+        <div class="publication">
+          <strong>MR-guided localization and safety frameworks for transcranial ultrasound</strong>
+          <span>Imaging and validation work supporting rigorous, translational focused ultrasound experiments.</span>
+        </div>
+        <p><a class="button primary" href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">View full publication list</a></p>
+      </div>
+    </section>
+
+    <section id="people" aria-labelledby="people-title">
+      <div class="section-heading">
+        <h2 id="people-title">People</h2>
+        <p>The lab collaborates closely with engineers, neuroscientists, clinicians, and imaging scientists to advance ultrasound from a promising tool to a reliable therapeutic modality.</p>
+      </div>
+      <div class="split">
+        <div class="panel person">
+          <div class="avatar" aria-hidden="true">CC</div>
+          <div>
+            <h3>Charles Caskey, PhD</h3>
+            <p>Principal Investigator</p>
+            <p>Focused ultrasound, image-guided therapy, neuromodulation, and quantitative validation.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Lab members and collaborators</h3>
+          <p>Add current trainees, staff, and collaborators here. For a first public version, it is fine to keep this section concise and update it as people confirm preferred titles, photos, and links.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" aria-labelledby="join-title">
+      <div class="section-heading">
+        <h2 id="join-title">Join or collaborate</h2>
+        <p>We welcome conversations with students, postdoctoral researchers, clinicians, engineers, imaging scientists, and collaborators interested in rigorous ultrasound therapy and neuromodulation research.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Students</h3>
+          <p>Potential projects span biomedical imaging, ultrasound physics, neuroscience, device development, and experimental validation.</p>
+        </article>
+        <article class="card">
+          <h3>Postdoctoral researchers</h3>
+          <p>Strong fits may include focused ultrasound, MRI, neurotechnology, computational modeling, or translational experimental systems.</p>
+        </article>
+        <article class="card">
+          <h3>Collaborators</h3>
+          <p>We are especially interested in partnerships that connect rigorous measurement with meaningful biological or clinical questions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section-heading">
+        <h2 id="contact-title">Contact</h2>
+      </div>
+      <div class="panel">
+        <p><strong>Laboratory for Acoustic Therapy and Imaging</strong><br />Directed by Charles Caskey, PhD</p>
+        <p>Add institutional address, email, and profile links here.</p>
+        <p><a href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">Google Scholar profile</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Laboratory for Acoustic Therapy and Imaging. This temporary research group website is maintained for academic communication. Institutional affiliations are listed for identification purposes.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
