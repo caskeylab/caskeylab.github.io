@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laboratory for Acoustic Therapy and Imaging | Charles Caskey, PhD</title>
-  <meta name="description" content="The Laboratory for Acoustic Therapy and Imaging develops noninvasive, image-guided ultrasound technologies for acoustic therapy, neuromodulation, and quantitative imaging." />
+  <meta name="description" content="The Laboratory for Acoustic Therapy and Imaging develops focused ultrasound technologies to probe, modulate, and understand brain circuits with quantitative imaging and validation." />
   <style>
     :root {
       --bg: #f7f8fb;
@@ -137,7 +137,7 @@
 
     .section-heading { margin: 3.8rem 0 1.2rem; }
     .section-heading h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1; letter-spacing: -0.055em; margin: 0; }
-    .section-heading p { color: var(--muted); font-size: 1.06rem; max-width: 780px; margin: 0.85rem 0 0; }
+    .section-heading p { color: var(--muted); font-size: 1.06rem; max-width: 820px; margin: 0.85rem 0 0; }
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
     .card {
@@ -166,11 +166,7 @@
     .thrust li { margin: 0.45rem 0; }
 
     .split { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1rem; align-items: stretch; }
-    .person {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
+    .person { display: flex; gap: 1rem; align-items: center; }
     .avatar {
       width: 82px;
       height: 82px;
@@ -188,14 +184,21 @@
     .person p { margin: 0.2rem 0 0; color: var(--muted); }
 
     .publication-list { display: grid; gap: 0.8rem; }
-    .publication {
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--accent-3);
+    .publication-group { padding: 1rem; border: 1px solid var(--line); border-radius: 18px; background: var(--accent-3); }
+    .publication-group h3 { margin: 0 0 0.5rem; letter-spacing: -0.03em; }
+    .publication-group ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .publication-group li { margin: 0.45rem 0; }
+
+    .callout {
+      margin-top: 1rem;
+      background: linear-gradient(135deg, var(--accent), #183f52);
+      color: white;
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
     }
-    .publication strong { display: block; }
-    .publication span { color: var(--muted); display: block; margin-top: 0.2rem; }
+    .callout h3 { margin: 0 0 0.4rem; }
+    .callout p { margin: 0; color: rgba(255,255,255,0.86); }
 
     footer {
       border-top: 1px solid var(--line);
@@ -231,24 +234,24 @@
   <main id="home">
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">Focused ultrasound • Imaging • Neuromodulation</p>
-        <h1 id="hero-title">Noninvasive ultrasound technologies for therapy and brain modulation.</h1>
-        <p class="hero-text">The Laboratory for Acoustic Therapy and Imaging develops image-guided ultrasound technologies for precise control, measurement, and understanding of biological systems.</p>
+        <p class="eyebrow">Focused ultrasound • Targeting and safety • Imaging • Neuromodulation</p>
+        <h1 id="hero-title">Quantitative ultrasound systems for therapy, imaging, and brain modulation.</h1>
+        <p class="hero-text">The Laboratory for Acoustic Therapy and Imaging develops focused ultrasound and ultrasound imaging technologies that make acoustic interactions with tissue precise, measurable, and biologically meaningful. Our work integrates targeting, safety, imaging, and mechanism to advance ultrasound as a controllable platform for therapy and neuroscience.</p>
         <div class="hero-actions">
           <a class="button primary" href="#research">Explore research</a>
           <a class="button" href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">Google Scholar</a>
         </div>
       </div>
       <aside class="hero-card" aria-label="Lab summary">
-        <h2>Acoustics, imaging, and biology</h2>
-        <p>Focused ultrasound can interact with tissue deep in the body without surgery while maintaining millimeter-scale spatial precision.</p>
-        <p>Our lab combines experimental physics, biomedical imaging, neurobiology, and translational validation to make acoustic therapies controllable, interpretable, and safe.</p>
+        <h2>What quantitative ultrasound enables</h2>
+        <p>Ultrasound can deliver energy, perturb biological systems, image physiology, and monitor therapy. The challenge is making those interactions spatially precise, quantitatively measured, and biologically interpretable.</p>
+        <p>We develop systems and experiments that connect acoustic exposure to tissue response—from targeting and safety to imaging biomarkers, neuromodulation, and mechanism.</p>
         <div class="tag-row">
-          <span class="tag">MR-guided FUS</span>
-          <span class="tag">MR-ARFI</span>
-          <span class="tag">Brain networks</span>
+          <span class="tag">Targeting</span>
           <span class="tag">Safety</span>
-          <span class="tag">Validation</span>
+          <span class="tag">Ultrasound imaging</span>
+          <span class="tag">MR-guided FUS</span>
+          <span class="tag">Neuromodulation</span>
         </div>
       </aside>
     </section>
@@ -256,21 +259,21 @@
     <section id="research" aria-labelledby="research-title">
       <div class="section-heading">
         <h2 id="research-title">Research</h2>
-        <p>Our research addresses a central challenge in therapeutic ultrasound: how to precisely deliver, measure, and interpret acoustic interactions with living tissue, especially in the brain.</p>
+        <p>Our research is organized around a central idea: ultrasound can become a controllable therapeutic and neuroscience platform only when targeting, safety, imaging, and biological response are treated as one integrated measurement problem.</p>
       </div>
 
       <div class="grid" aria-label="Research themes">
         <article class="card">
-          <h3>Focused Ultrasound Neuromodulation</h3>
-          <p>Noninvasive modulation of neural circuits with millimeter precision, informed by imaging, pulse design, and mechanism.</p>
+          <h3>Targeting, safety, and translational systems</h3>
+          <p>Developing imaging, simulation, tracking, and validation workflows that make ultrasound therapies precise, reproducible, and clinically credible.</p>
         </article>
         <article class="card">
-          <h3>Acoustic Therapy & Safety</h3>
-          <p>Quantitative frameworks for exposure control, validation, and translational feasibility.</p>
+          <h3>Ultrasound imaging and therapy monitoring</h3>
+          <p>Using Doppler imaging, passive acoustic mapping, and physiologic ultrasound biomarkers to guide interventions and monitor tissue response.</p>
         </article>
         <article class="card">
-          <h3>Imaging & Measurement</h3>
-          <p>MR-based and optical techniques to localize, quantify, and interpret ultrasound–tissue interactions.</p>
+          <h3>Neuromodulation and mechanism</h3>
+          <p>Applying focused ultrasound to modulate brain circuits and studying how acoustic parameters interact with cells, networks, and behavior.</p>
         </article>
       </div>
 
@@ -279,58 +282,96 @@
       </div>
       <div class="panel">
         <article class="thrust">
-          <h3>1. Focused ultrasound neuromodulation</h3>
+          <h3>1. Targeting, safety, and translational systems</h3>
           <div>
-            <p>Focused ultrasound can excite, inhibit, or modulate neural activity without implants or incisions. We study neuromodulation across scales, from cellular responses to distributed brain networks.</p>
+            <p>Reliable therapy and rigorous neuroscience both depend on knowing where the acoustic field goes and what it does. We develop quantitative methods to localize, simulate, validate, and monitor ultrasound exposure.</p>
             <ul>
-              <li>Circuit-level neuromodulation in nonhuman primates using MRI guidance and simultaneous fMRI.</li>
-              <li>Pulse repetition frequency and temporal structure as determinants of neuronal response.</li>
-              <li>Mechanistic studies linking acoustic parameters to cellular and network-level outcomes.</li>
+              <li>MR Acoustic Radiation Force Imaging and MR thermometry for focus localization and exposure assessment.</li>
+              <li>Optical tracking, stereotactic frames, patient-specific simulations, synthetic CT, and aberration correction workflows.</li>
+              <li>Safety, cavitation monitoring, and consensus frameworks for transcranial ultrasound stimulation and blood–brain barrier opening.</li>
             </ul>
           </div>
         </article>
         <article class="thrust">
-          <h3>2. Image-guided acoustic therapy and safety</h3>
+          <h3>2. Ultrasound imaging and therapy monitoring</h3>
           <div>
-            <p>Precise therapy requires knowing where ultrasound energy is delivered and what it does to tissue. We develop imaging-based methods to localize acoustic fields and assess exposure.</p>
+            <p>Beyond delivering acoustic energy, ultrasound can provide real-time information about vascular physiology, microbubble activity, and treatment response. We develop and apply ultrasound imaging approaches that help guide therapy and quantify biological change.</p>
             <ul>
-              <li>MR Acoustic Radiation Force Imaging for nonthermal localization of focused ultrasound beams.</li>
-              <li>Integration of MRI, optical tracking, and simulation for targeting and validation.</li>
-              <li>Quantitative assessment of heating, displacement, and cavitation risk.</li>
+              <li>Power Doppler imaging and passive acoustic mapping to guide focused ultrasound-mediated blood–brain barrier opening.</li>
+              <li>Ultrafast power Doppler ultrasound to monitor vascular changes associated with radiation response and immune activity in tumors.</li>
+              <li>Quantitative ultrasound workflows that connect imaging biomarkers to physiology, targeting, and therapeutic response.</li>
             </ul>
           </div>
         </article>
         <article class="thrust">
-          <h3>3. Imaging, measurement, and ground-truth validation</h3>
+          <h3>3. Causal neuromodulation of brain circuits</h3>
           <div>
-            <p>Ultrasound–tissue interactions are physical processes that must be quantified before biological interpretation. We treat measurement as a first-class scientific objective.</p>
+            <p>Focused ultrasound can modulate neural activity without implants or incisions. We use this capability to probe causal relationships in sensory, pain, cognitive, and affective networks.</p>
             <ul>
-              <li>Cross-validation using MR thermometry, displacement imaging, acoustic simulation, and biological readouts.</li>
-              <li>Experimental paradigms designed to avoid measurement artifacts and confounds.</li>
-              <li>Linking pressure, displacement, and timing to biological responses observed optically or with fMRI.</li>
+              <li>MR-guided focused ultrasound with fMRI readouts to study circuit-level responses in nonhuman primates.</li>
+              <li>Network-level studies of somatosensory, thalamocortical, nociceptive, and frontal systems.</li>
+              <li>Collaborative experiments linking precise perturbation to behavior, learning, motivation, and brain-state-dependent responses.</li>
             </ul>
           </div>
         </article>
+        <article class="thrust">
+          <h3>4. Mechanisms of ultrasound–biological interaction</h3>
+          <div>
+            <p>To make ultrasound therapies controllable, we study how acoustic parameters produce biological responses. This includes cellular, pharmacological, and imaging-based experiments that connect pulse design to mechanism.</p>
+            <ul>
+              <li>Pulse repetition frequency and temporal structure as determinants of neuronal calcium responses.</li>
+              <li>Ion-channel and mechanosensitive pathways contributing to ultrasound-evoked activity.</li>
+              <li>Responses across neurons, glia, endothelial cells, pericytes, and tumor cells to understand ultrasound as a multicellular mechanical stimulus.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <h3>Lab philosophy</h3>
+        <p>We build tools, but not for their own sake. Our goal is to make ultrasound a quantitative intervention and measurement platform: a way to target tissue, image response, test causal hypotheses, and translate those insights into safe, controllable therapies.</p>
       </div>
     </section>
 
     <section id="publications" aria-labelledby="publications-title">
       <div class="section-heading">
-        <h2 id="publications-title">Publications</h2>
-        <p>Representative publications will be highlighted here with brief impact summaries. A complete and current publication list is available through Google Scholar.</p>
+        <h2 id="publications-title">Selected publication themes</h2>
+        <p>Our publications span targeting and safety systems, ultrasound imaging and therapy monitoring, causal brain circuit modulation, and mechanisms of ultrasound bioeffects. A complete and current publication list is available through Google Scholar.</p>
       </div>
       <div class="panel publication-list">
-        <div class="publication">
-          <strong>Focused ultrasound neuromodulation in nonhuman primates</strong>
-          <span>Program-defining work using image guidance and functional imaging to evaluate circuit-level responses.</span>
+        <div class="publication-group">
+          <h3>Targeting, safety, and translational systems</h3>
+          <ul>
+            <li>MR-ARFI methods for transcranial focus localization and safe exposure selection.</li>
+            <li>Patient-specific simulation, synthetic CT, optical tracking, stereotactic frame, and through-transmit aberration correction workflows.</li>
+            <li>Small-volume blood–brain barrier opening, cavitation monitoring, and therapeutic ultrasound array development.</li>
+            <li>International consensus work on biophysical safety for transcranial ultrasound stimulation.</li>
+          </ul>
         </div>
-        <div class="publication">
-          <strong>Pulse-parameter mechanisms in ultrasound neuromodulation</strong>
-          <span>Studies identifying how stimulation timing and pulse structure influence neuronal response.</span>
+        <div class="publication-group">
+          <h3>Ultrasound imaging and therapy monitoring</h3>
+          <ul>
+            <li>Power Doppler imaging and passive acoustic mapping to guide focused ultrasound-mediated blood–brain barrier opening.</li>
+            <li>Ultrafast power Doppler imaging to track vascular changes associated with radiation response and tumor immune activity.</li>
+            <li>Open-source and quantitative ultrasound analysis workflows for vascular physiology and imaging biomarkers.</li>
+          </ul>
         </div>
-        <div class="publication">
-          <strong>MR-guided localization and safety frameworks for transcranial ultrasound</strong>
-          <span>Imaging and validation work supporting rigorous, translational focused ultrasound experiments.</span>
+        <div class="publication-group">
+          <h3>Causal brain circuit modulation</h3>
+          <ul>
+            <li>Bidirectional and state-dependent modulation of brain activity by transcranial focused ultrasound in nonhuman primates.</li>
+            <li>Focused ultrasound modulation of somatosensory and thalamocortical networks measured with fMRI.</li>
+            <li>Focused ultrasound studies of nociceptive processing, thalamic targets, and effective connectivity.</li>
+            <li>Collaborative work using ultrasound stimulation to test frontal circuit contributions to flexible learning and motivation.</li>
+          </ul>
+        </div>
+        <div class="publication-group">
+          <h3>Mechanisms of neuromodulation</h3>
+          <ul>
+            <li>Ultrasound neuromodulation depends on pulse repetition frequency and can modulate inhibitory pharmacological effects.</li>
+            <li>Calcium imaging studies of ultrasound responses in neurons, glia, endothelial cells, and pericytes.</li>
+            <li>Mechanistic studies connecting acoustic parameters, mechanosensitive pathways, and cellular responses.</li>
+          </ul>
         </div>
         <p><a class="button primary" href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">View full publication list</a></p>
       </div>
@@ -339,7 +380,7 @@
     <section id="people" aria-labelledby="people-title">
       <div class="section-heading">
         <h2 id="people-title">People</h2>
-        <p>The lab collaborates closely with engineers, neuroscientists, clinicians, and imaging scientists to advance ultrasound from a promising tool to a reliable therapeutic modality.</p>
+        <p>The lab works at the intersection of acoustics, ultrasound imaging, MRI, neuroscience, and translational neurotechnology. We collaborate closely with engineers, neuroscientists, clinicians, imaging scientists, and domain experts in animal and human studies.</p>
       </div>
       <div class="split">
         <div class="panel person">
@@ -347,7 +388,7 @@
           <div>
             <h3>Charles Caskey, PhD</h3>
             <p>Principal Investigator</p>
-            <p>Focused ultrasound, image-guided therapy, neuromodulation, and quantitative validation.</p>
+            <p>Focused ultrasound, ultrasound imaging, image-guided therapy, neuromodulation, quantitative validation, and translational neurotechnology.</p>
           </div>
         </div>
         <div class="panel">
@@ -365,15 +406,15 @@
       <div class="grid">
         <article class="card">
           <h3>Students</h3>
-          <p>Potential projects span biomedical imaging, ultrasound physics, neuroscience, device development, and experimental validation.</p>
+          <p>Potential projects span biomedical imaging, ultrasound physics, neuroscience, device development, computation, and experimental validation.</p>
         </article>
         <article class="card">
           <h3>Postdoctoral researchers</h3>
-          <p>Strong fits may include focused ultrasound, MRI, neurotechnology, computational modeling, or translational experimental systems.</p>
+          <p>Strong fits may include focused ultrasound, MRI, neurotechnology, computational modeling, systems neuroscience, or translational experimental systems.</p>
         </article>
         <article class="card">
           <h3>Collaborators</h3>
-          <p>We are especially interested in partnerships that connect rigorous measurement with meaningful biological or clinical questions.</p>
+          <p>We are especially interested in partnerships that connect quantitative perturbation with meaningful biological, behavioral, or clinical questions.</p>
         </article>
       </div>
     </section>
