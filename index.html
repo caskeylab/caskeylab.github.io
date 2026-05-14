@@ -215,6 +215,22 @@
       .hero { padding-top: 3.5rem; }
       .nav-links { gap: 0.75rem; }
     }
+    .alumni-list {
+      columns: 2;
+      column-gap: 2rem;
+      padding-left: 1.2rem;
+    }
+
+    .alumni-list li {
+      margin-bottom: 0.45rem;
+      break-inside: avoid;
+    }
+
+    @media (max-width: 700px) {
+      .alumni-list {
+        columns: 1;
+      }
+    }	
   </style>
 </head>
 <body>
@@ -474,8 +490,18 @@
 </section>
 
     <section id="people" aria-labelledby="people-title">
+
       <div class="section-heading">
-        <h2 id="people-title">People</h2>
+        <h2 id="people-title">People</h2><br>
+	    <img src="images/group_photo.png"
+          alt="Caskey Lab group photo"
+          style="
+          width:100%;
+          max-height:420px;
+          object-fit:cover;
+          border-radius:22px;
+          margin-bottom:1.5rem;
+        ">
         <p>The lab works at the intersection of acoustics, ultrasound imaging, MRI, neuroscience, and translational neurotechnology. We collaborate closely with engineers, neuroscientists, clinicians, imaging scientists, and domain experts in preclinical and human studies.</p>
       </div>
   
@@ -491,14 +517,124 @@
     <div class="people-grid">
     <!-- repeat for lab members -->
       <div class="card person">
-        <div class="avatar" aria-hidden="true">JK</div>
-        <div>
+      <img class="avatar" src="images/Kusunose_J.jpg" alt="Jiro Kusunose">        
+	  <div>
           <h3>Jiro Kusunose, PhD</h3>
           <p>Imaging Research Specialist</p>
-          <p>Brief research interest.</p>
+          <p>Research focuses on diagnostic and therapeutic ultrasound, contrast agents, and image-guided cancer therapy and neuromodulation. Current projects investigate ultrasound-enhanced particle delivery to breast tumors and focused ultrasound approaches for neuronal activation in the brain.</p>
+        </div>
+	  </div>
+
+      <div class="card person">
+      <img class="avatar" src="images/Phipps_M.jpg" alt="Tony Phipps">        
+	  <div>
+          <h3>Tony Phipps, PhD</h3>
+          <p>Imaging Research Specialist</p>
+          <p>Interested in image-guided focused ultrasound for neuromodulation, with a focus on the safety, targeting, and validation of transcranial ultrasound stimulation experiments.</p>
+        </div>
+	  </div>
+
+      <div class="card person">
+		<div class="avatar" aria-hidden="true">JH</div>
+		  <div>
+            <h3>Jad El Harake, PhD</h3>
+            <p>Postdoctoral Scholar</p>
+            <p>Research description.</p>
+          </div>
+      </div>		  
+	  
+
+      <div class="card person">
+        <img class="avatar" src="images/Dockum_A.jpg" alt="Allie Dockum">        
+	    <div>
+          <h3>Allie Dockum</h3>
+          <p>Graduate Student</p>
+          <p>Interested in transcranial focused ultrasound for studying complex cognition. Develops neuromodulation treatment pipelines using simulation and optical tracking, with a focus on thalamic ultrasound interactions.</p>
         </div>
       </div>
+	  
+      <div class="card person">
+        <img class="avatar" src="images/Xia_A.jpg" alt="Jixin Andy Xia">        
+	    <div>
+          <h3>Jixin "Andy" Xia</h3>
+          <p>Graduate Student</p>
+          <p>PhD candidate in Biomedical Engineering focused on the design and application of focused ultrasound neuromodulation systems. Develops ultrasound-guided neuromodulation platforms, low-cost transcranial FUS arrays, and novel targeting methods, with collaborative work spanning functional ultrasound imaging, immunomodulation, and preclinical neuroscience.</p>
+        </div>
+      </div>
+      <div class="card person">
+        <img class="avatar" src="images/McDonald-Boyer_A.jpg" alt="Ainsley McDonald-Boyer">        
+	    <div>
+          <h3>Ainsley McDonald-Boyer</h3>
+          <p>Graduate Student</p>
+          <p>Brief research description.</p>
+        </div>
+	  </div>
+	  
+      <div class="card person">
+        <img class="avatar" src="images/Newman_M.jpg" alt="Malachy Newman">        
+		<div>
+          <h3>Malachy Newman</h3>
+          <p>Graduate Student</p>
+          <p>Researches therapeutic ultrasound-mediated drug delivery with a focus on transcranial blood–brain barrier opening. Current projects investigate ultrasound-enabled neuromodulation with neuroactive agents monitored by fMRI, as well as novel contrast agents to improve blood–brain barrier opening.</p>
+        </div>
+	  </div>
+	  
+	  <div class="card person">
+		<div class="avatar" aria-hidden="true">BY</div>
+		  <div>
+            <h3>Boqun Yang</h3>
+            <p>Master of Imaging Science Student</p>
+            <p>Skull attenuation during transcranial ultrasound.</p>
+          </div>
+      </div>
+	  
+      <div class="card person">
+        <img class="avatar" src="images/Donovan_C.png" alt="Cooper Donovan">        
+		<div>
+          <h3>Cooper Donovan</h3>
+          <p>Undergraduate Researcher</p>
+          <p>Undergraduate researcher focused on transcranial focused ultrasound simulation and aberration correction. Contributed to studies of through-transmit skull compensation methods in preclinical models and developed GPU-accelerated acoustic simulation and signal processing workflows.</p>
+        </div>
+	  </div>	  
+
     </div>
+
+<div class="panel">
+  <h3>Alumni</h3>
+
+  <p style="color:#666;">
+    Past lab members and trainees
+  </p>
+
+  <ul class="alumni-list">
+    <li>Christopher Jarrett — Graduate student</li>
+    <li>Eddie Hyatt — Radiology resident</li>
+    <li>Audris Pinkerton — Medical student</li>
+    <li>Michael Kremer — Undergraduate student</li>
+    <li>Vandiver Chaplin — Graduate student</li>
+    <li>Jiro Kusunose — Postdoctoral scholar</li>
+    <li>Megan Poorman — Co-mentored graduate student</li>
+    <li>Michael Hogan — Radiology resident</li>
+    <li>Marshal Phipps — Graduate student & postdoc</li>
+    <li>Jad el Harake — Undergraduate student</li>
+    <li>Sumeeth Jonathan — Co-mentored graduate student</li>
+    <li>Molly Powers — High school student</li>
+    <li>James Su — Medical student</li>
+    <li>Yixuan Huang — Undergraduate student</li>
+    <li>Huiwen Luo — Co-mentored graduate student</li>
+    <li>Aparna Singh — Graduate student</li>
+    <li>Zachary Taylor — High school student</li>
+    <li>Karthik Sundaram — Resident</li>
+    <li>Connor Krolak — Undergraduate student</li>
+    <li>Catherine Smith — High school student</li>
+    <li>Michelle Sigona — Graduate student</li>
+    <li>Thomas Manuel — Graduate student</li>
+    <li>Jake Emrich — Undergraduate student</li>
+    <li>Madison Albert — Undergraduate student</li>
+    <li>Timothy Egbonim — Undergraduate student</li>
+    <li>Ryan Margolis — Postdoctoral scholar</li>
+  </ul>
+</div>
 
     </section>
 
