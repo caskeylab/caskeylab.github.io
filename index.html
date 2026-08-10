@@ -67,13 +67,52 @@
     main { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem 4rem; }
     section { scroll-margin-top: 5.5rem; }
 
-    .hero {
-      padding: 6rem 0 3.25rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-      gap: 2rem;
-      align-items: center;
-    }
+.hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: 560px;
+
+ /* background-image:
+    linear-gradient(
+      270deg,
+      rgba(0,0,0,0.45) 0%,
+      rgba(0,0,0,0.18) 25%,
+      rgba(0,0,0,0) 50%
+    ),
+    url("images/Header_Image.webp");*/
+	background-image: url("images/Header_Image.webp");
+
+  background-repeat: no-repeat;
+  background-size: 115% auto;
+  background-position: 110% center;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 620px;
+  margin-left: 5%;
+  padding: 3rem;
+  color: white;
+}
+
+	.hero-content h1 {
+	  color: white;
+	  font-size: clamp(2.6rem, 5vw, 4.6rem);
+	  line-height: 0.98;
+	  letter-spacing: -0.05em;
+	}
+
+	.hero-content .eyebrow {
+	  color: #f2b38a;
+	}
+
+	.hero-content .hero-text {
+	  color: rgba(255,255,255,0.82);
+	}
+
     .eyebrow {
       color: var(--accent);
       font-weight: 750;
@@ -227,9 +266,23 @@
     }
 
     @media (max-width: 700px) {
-      .alumni-list {
-        columns: 1;
-      }
+		.alumni-list {
+			columns: 1;
+		}
+	  
+		.hero {
+		  min-height: 520px;
+		  margin-top: 1rem;
+		  background-position: 62% center;
+		}
+
+		.hero-content {
+		  padding: 2rem;
+		}
+
+		.hero-content h1 {
+		  font-size: clamp(2.3rem, 11vw, 3.4rem);
+		}	  
     }	
   </style>
 </head>
@@ -249,26 +302,37 @@
 
   <main id="home">
     <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <p class="eyebrow">Focused ultrasound • Targeting and safety • Imaging • Neuromodulation</p>
-        <h1 id="hero-title">Focused ultrasound for precise interaction with biological systems.</h1>
-<p class="hero-text">The Laboratory for Acoustic Therapy and Imaging develops focused ultrasound technologies for noninvasive interaction with biological systems. Our work integrates precise targeting, imaging, and mechanistic insight to make ultrasound a controllable and interpretable platform for therapy and neuroscience.</p>        <div class="hero-actions">
-          <a class="button primary" href="#research">Explore research</a>
-          <a class="button" href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer">Google Scholar</a>
-        </div>
-      </div>
-      <aside class="hero-card" aria-label="Lab summary">
-        <h2>What ultrasound enables</h2>
-        <p>Ultrasound can deliver energy, perturb biological systems, image physiology, and monitor therapy. The challenge is making those interactions spatially precise, quantitatively measured, and biologically interpretable.</p>
-        <p>We develop systems and experiments that connect acoustic exposure to tissue response—from targeting and safety to imaging biomarkers, neuromodulation, and exploring mechanisms.</p>
-        <div class="tag-row">
-          <span class="tag">Targeting</span>
-          <span class="tag">Safety</span>
-          <span class="tag">Ultrasound imaging</span>
-          <span class="tag">MR-guided FUS</span>
-          <span class="tag">Neuromodulation</span>
-        </div>
-      </aside>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      Focused ultrasound • Imaging • Neuromodulation
+    </p>
+
+    <h1 id="hero-title">
+      Laboratory for Acoustic Therapy and Imaging
+    </h1>
+
+    <p class="hero-text">
+      Developing focused ultrasound technologies for precise,
+      noninvasive interaction with biological systems.
+    </p>
+
+    <div class="hero-actions">
+      <a class="button primary" href="#research">
+        Explore research
+      </a>
+
+      <a class="button"
+         href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works&sortby=pubdate"
+         target="_blank"
+         rel="noreferrer">
+        Google Scholar
+      </a>
+    </div>
+
+  </div>
+</section>
     </section>
 
     <section id="research" aria-labelledby="research-title">
