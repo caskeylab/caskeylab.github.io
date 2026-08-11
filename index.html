@@ -264,7 +264,17 @@
       .nav { align-items: flex-start; flex-direction: column; }
       .hero { padding-top: 3.5rem; }
       .nav-links { gap: 0.75rem; }
+	  .hero {
+    border-radius: 24px;
+	}
     }
+	
+	@media (max-width: 600px) {
+	  .hero {
+		border-radius: 14px;
+	  }
+	}	
+	
     .alumni-list {
       columns: 2;
       column-gap: 2rem;
@@ -295,6 +305,79 @@
 		  font-size: clamp(2.3rem, 11vw, 3.4rem);
 		}	  
     }	
+
+.news-section {
+  width: min(
+    var(--hero-width),
+    calc(100vw - 2 * var(--page-gutter))
+  );
+  margin-inline: auto;
+}
+
+.news-carousel {
+  position: relative;
+}
+
+.news-track {
+  display: flex;
+  gap: 1.25rem;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  padding: 1rem calc((100% - min(680px, 85vw)) / 2);
+
+  scrollbar-width: none;
+}
+
+.news-track::-webkit-scrollbar {
+  display: none;
+}
+
+.news-card {
+  flex: 0 0 min(680px, 85vw);
+
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+
+  min-height: 230px;
+
+  overflow: hidden;
+  border-radius: 18px;
+
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  scroll-snap-align: center;
+}
+
+.news-card-text {
+  padding: 1.75rem;
+}
+
+.news-card h3 {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 1.4rem;
+}
+
+.news-card p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.news-card time {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.news-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
   </style>
 </head>
 <body>
@@ -344,7 +427,91 @@
 
   </div>
 </section>
-    </section>
+</section>
+<section class="news-section" id="news">
+  <div class="section-header">
+    <p class="eyebrow">Latest</p>
+    <h2>News</h2>
+  </div>
+
+  <div class="news-carousel">
+
+    <button class="news-arrow news-prev" aria-label="Previous news item">
+      ←
+    </button>
+
+    <div class="news-track">
+
+      <article class="news-card">
+        <!-- next story -->
+      </article>
+	 
+      <article class="news-card">
+	    <div class="news-card-text">
+          <time datetime="2026-08">June 2026</time>
+		
+          <h3>New FUS Forward with Zhihai Qiu</h3>
+		  <p>
+		  Charles and Keith sat down with Zhihai Qiu of Guadont Institute of Science and Technology, whose group pioneered genetically sensitizing neurons to ultrasound. We talk sonogenetics, his journey through physics and neuroscience, the importance of collaboration, and why he sees a bright future for the field.
+		  </p>
+		  <p>
+		  <i><a href="https://open.spotify.com/episode/15RvhPNhBqMxNWGw9DX4kM">FUS Forward, July 2026</a></i>
+		  </p>		  
+		  </div>
+       <img
+          src="images/news/FUSForward_Zhihai.png"
+          alt="River boat ride on the Seine in Paris"
+        >
+      </article>
+
+      <article class="news-card">
+        <div class="news-card-text">
+          <time datetime="2026-08">July 2026</time>
+          <h3>Lab attends FUN26</h3>
+          <p>
+			The lab attended the <a href="https://www.itrusst.com/fun26">FUN26</a> conference and presented abstracts on array construction, thalamocortical modulation, and methods to localize transducers
+			during MR-guided focused ultrasound. This conference always has a ton of great science, and this year was no exception. It was, however, possibly eclipsed
+			by the baguettes.
+          </p>
+        </div>
+
+        <img
+          src="images/news/paris.png"
+          alt="River boat ride on the Seine in Paris"
+        >
+      </article>
+
+      <article class="news-card">
+	    <div class="news-card-text">
+          <time datetime="2026-08">July 2026</time>
+		
+          <h3>New study links focused ultrasound to neural and fMRI responses in the primate brain</h3>
+		  <p>
+		  focused ultrasound targeting the thalamus produced localized changes in neuronal activity and fMRI signals. The findings help clarify how ultrasound modulates deep brain circuits and support its potential for precise, non-invasive neuromodulation.
+		  </p>
+		  <p>
+		  <i><a href="https://www.nature.com/articles/s41467-026-75826-8">Nature Communications, July 2026</a></i>
+		  </p>
+		  </div>
+       <img
+          src="images/news/NatureComms2026.png"
+          alt="River boat ride on the Seine in Paris"
+        >
+      </article>
+
+      <article class="news-card">
+        <!-- next story -->
+      </article>
+
+
+    </div>
+
+    <button class="news-arrow news-next" aria-label="Next news item">
+      →
+    </button>
+
+  </div>
+</section>
 <section class="section-medium">
     <section id="research" aria-labelledby="research-title">
       <div class="section-heading">
@@ -786,5 +953,44 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  
+  <!-- rest of page -->
+
+<script>
+  const track = document.querySelector('.news-track');
+  const cards = document.querySelectorAll('.news-card');
+  const prevButton = document.querySelector('.news-prev');
+  const nextButton = document.querySelector('.news-next');
+
+  if (track && cards.length && prevButton && nextButton) {
+    const scrollAmount = () => cards[0].offsetWidth + 20;
+
+    // Start centered on the third card
+    if (cards[2]) {
+      cards[2].scrollIntoView({
+        behavior: 'auto',
+        inline: 'center',
+        block: 'nearest'
+      });
+    }
+
+    nextButton.addEventListener('click', () => {
+      track.scrollBy({
+        left: scrollAmount(),
+        behavior: 'smooth'
+      });
+    });
+
+    prevButton.addEventListener('click', () => {
+      track.scrollBy({
+        left: -scrollAmount(),
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
+
+</body>
+</html>  
 </body>
 </html>
