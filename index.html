@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Laboratory for Acoustic Therapy and Imaging | Charles Caskey, PhD</title>
-  <meta name="description" content="The Laboratory for Acoustic Therapy and Imaging develops focused ultrasound technologies to probe, modulate, and understand brain circuits with quantitative imaging and validation." />
+  <meta name="descrip.contion" content="The Laboratory for Acoustic Therapy and Imaging develops focused ultrasound technologies to probe, modulate, and understand brain circuits with quantitative imaging and validation." />
   <style>
     :root {
       --bg: #f7f8fb;
       --paper: #ffffff;
-      --ink: #17202a;
+      --ink: #17202a;`
       --muted: #5d6875;
       --line: #dce3ea;
       --accent: #245c73;
@@ -18,6 +18,8 @@
       --max: 1120px;
       --radius: 22px;hero
       --shadow: 0 18px 50px rgba(23, 32, 42, 0.08);
+	  --page-width: 1500px;
+	  --page-gutter: 1.5rem;
     }
 
     * { box-sizing: border-box; }
@@ -69,23 +71,15 @@
 
 .hero {
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
   min-height: 560px;
-
- /* background-image:
-    linear-gradient(
-      270deg,
-      rgba(0,0,0,0.45) 0%,
-      rgba(0,0,0,0.18) 25%,
-      rgba(0,0,0,0) 50%
-    ),
-    url("images/Header_Image.webp");*/
-	background-image: url("images/Header_Image.webp");
-
+  background-image: url("images/Header_Image.webp");
   background-repeat: no-repeat;
-  background-size: 115% auto;
+  background-size: 100% auto;
   background-position: 110% center;
+
+  border-radius: 50px;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -177,6 +171,23 @@
     .section-heading { margin: 3.8rem 0 1.2rem; }
     .section-heading h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1; letter-spacing: -0.055em; margin: 0; }
     .section-heading p { color: var(--muted); font-size: 1.06rem; max-width: 820px; margin: 0.85rem 0 0; }
+
+
+	.section-wide {
+	  width: 100%;
+	}
+
+	.section-medium {
+	  width: 85%;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.section-narrow {
+	  width: 70%;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
 
     .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
     .card {
@@ -334,7 +345,7 @@
   </div>
 </section>
     </section>
-
+<section class="section-medium">
     <section id="research" aria-labelledby="research-title">
       <div class="section-heading">
         <h2 id="research-title">Research</h2>
@@ -355,6 +366,11 @@
           <p>Applying focused ultrasound to modulate brain circuits and studying how acoustic energy can be used to interact with and modulate cells, networks, and behavior.</p>
         </article>
       </div>
+</section>
+</section>
+
+
+<section class="section-medium">
 
       <div class="section-heading">
         <h2>Program areas</h2>
@@ -415,6 +431,9 @@
       Current work is supported by the National Institutes of Health and collaborative foundation-supported projects in focused ultrasound and neurotechnology.
       </p>	  
     </section>
+</section>
+
+<section class="section-medium">
 
     <section id="publications" aria-labelledby="publications-title">
       <div class="section-heading">
@@ -522,6 +541,8 @@
         <p><a class="button primary" href="https://scholar.google.com/citations?hl=en&user=Acis3H4AAAAJ&view_op=list_works" target="_blank" rel="noreferrer">View full publication list</a></p>
       </div>
     </section>
+</section>
+<section class="section-medium">
 
     <section id="outreach" aria-labelledby="outreach-title">
       <div class="section-heading">
@@ -553,6 +574,8 @@
    </div>
   
 </section>
+</section>
+<section class="section-medium">
 
     <section id="people" aria-labelledby="people-title">
 
@@ -701,6 +724,8 @@
 </div>
 
     </section>
+</section>
+<section class="section-medium">
 
     <section id="join" aria-labelledby="join-title">
       <div class="section-heading">
@@ -722,6 +747,8 @@
         </article>
       </div>
     </section>
+</section>
+<section class="section-medium">
 
     <section id="contact" aria-labelledby="contact-title">
       <div class="section-heading">
@@ -746,6 +773,8 @@
       </div>
 
     </section>
+</section>
+
   </main>
 
   <footer>
