@@ -9,14 +9,14 @@
     :root {
       --bg: #f7f8fb;
       --paper: #ffffff;
-      --ink: #17202a;`
+      --ink: #17202a;
       --muted: #5d6875;
       --line: #dce3ea;
       --accent: #245c73;
       --accent-2: #8aaec0;
       --accent-3: #eef6f8;
       --max: 1120px;
-      --radius: 22px;hero
+      --radius: 22px;
       --shadow: 0 18px 50px rgba(23, 32, 42, 0.08);
 	  --page-width: 1500px;
 	  --page-gutter: 1.5rem;
@@ -72,11 +72,14 @@
 .hero {
   position: relative;
   width: 100%;
+
   min-height: 560px;
+
   background-image: url("images/Header_Image.webp");
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: 110% center;
+
+  background-size: cover;
+  background-position: center center;
 
   border-radius: 50px;
   overflow: hidden;
@@ -291,11 +294,12 @@
 			columns: 1;
 		}
 	  
-		.hero {
-		  min-height: 520px;
-		  margin-top: 1rem;
-		  background-position: 62% center;
-		}
+    .hero {
+      min-height: unset;
+      padding: 4rem 2rem;
+      background-size: cover;
+      background-position: center;
+    }
 
 		.hero-content {
 		  padding: 2rem;
@@ -429,7 +433,6 @@
 </section>
 <section class="news-section" id="news">
   <div class="section-header">
-    <p class="eyebrow">Latest</p>
     <h2>News</h2>
   </div>
 
